@@ -59,7 +59,20 @@ module.exports = {
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
-        // Add any options here
+        displayName: process.env.NODE_ENV !== "production",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/account/pages`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/account/pages`,
+        ignore: [`**/styles.(js)?(x)`],
       },
     },
   ],
